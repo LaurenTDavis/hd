@@ -1,0 +1,23 @@
+{
+  "name": "hamlindavis",
+  "version": "1.0.0",
+  "description": "landing site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hamlin",
+    "davis"
+  ],
+  "author": "Lauren Davis",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "email-validator": "^1.0.7",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.8",
+    "nodemailer": "^2.6.4",
+    "nodemailer-smtp-transport": "^2.7.2"
+  }
+}

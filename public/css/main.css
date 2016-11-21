@@ -1,0 +1,94 @@
+html,
+body {
+    height: 100%;
+    background-image:url('../images/brickwall.jpg');
+    background-size: cover;
+}
+
+h2,p{
+  font-size:100%;
+  font-weight:normal;
+}
+ul,li{
+  list-style:none;
+}
+ul{
+  overflow:hidden;
+  padding:3em;
+}
+ul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:10em;
+  width:10em;
+  padding:1em;
+}
+ul li{
+  margin:1em;
+  float:left;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.right-arrow {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: 0 10px;
+}
+
+.left-arrow {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin: 0 10px;
+}
+
+a:hover, a:focus {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.home {
+    background-image: url('../images/HDLogo.png');
+    height: 400px;
+    width: 410px;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+footer {
+    margin: 50px 0;
+}
