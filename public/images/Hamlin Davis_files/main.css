@@ -54,7 +54,7 @@ footer {
   color: white;
   font-size: 50px;
   position: absolute;
-  top: 25px;
+  top: 45%;
   right: 0;
   margin: 0 10px;
 }
@@ -63,7 +63,7 @@ footer {
   color: white;
   font-size: 50px;
   position: absolute;
-  top: 25px;
+  top: 45%;
   left: 0;
   margin: 0 10px;
 }
@@ -84,7 +84,6 @@ a:hover, a:focus {
   -o-background-size: cover;
 }
 
-/*Main Page*/
 .home {
   background-image: url('../images/HDLogo.png');
   height: 250px;
@@ -93,80 +92,6 @@ a:hover, a:focus {
   margin: auto;
 }
 
-.banner {
-  position: relative;
-  z-index: 1;
-  margin: 80px auto;
-  width: 330px;
-}
-.banner .line {
-  margin: 0 0 10px;
-  width: 100%;
-  height: 78px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 78px;
-  transform: skew(0, -15deg);
-}
-
-.line-one {
-  font-size: 24px;
-}
-
-.line-two {
-  font-size: 14px;
-}
-
-.line-three {
-  font-size: 14px;
-}
-
-.banner .line:after,
-.banner .line:first-child:before {
-  position: absolute;
-  top: 44px;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 330px;
-  height: 78px;
-  border-radius: 4px;
-  background: rgba(180, 180, 180, 0.8);
-  content: '';
-  transform: skew(0, 15deg);
-}
-
-.banner .line:first-child:before {
-  top: -10px;
-  right: 0;
-  left: auto;
-}
-
-.banner .line:first-child:before,
-.banner .line:last-child:after {
-  width: 0;
-  height: 0;
-  border-width: 38px;
-  border-style: solid;
-  border-color: rgba(180, 180, 180, 0.8) rgba(180, 180, 180, 0.8) transparent transparent;
-  background: transparent;
-}
-
-.banner .line:last-child:after {
-  top: 12px;
-  border-color: transparent transparent rgba(180, 180, 180, 0.8) rgba(180, 180, 180, 0.8);
-}
-
-.banner span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #666;
-  text-shadow: 1px 1px 0 #444;
-}
 
 /*White Board Design*/
 
@@ -222,7 +147,7 @@ a:hover, a:focus {
 
 .sign-text {
   font-size: 25px;
-  font-family: 'Coming Soon', cursive;
+  font-family: 'Permanent Marker', cursive;
   text-align: center;
 }
 
@@ -317,9 +242,6 @@ a:hover, a:focus {
 
 /*Mailing List*/
 
-.spacing {
-  margin-top: 35px;
-}
 .notepad {
   margin: 1.5em auto;
   width: 300px;
@@ -330,7 +252,7 @@ a:hover, a:focus {
 .notepad h1 {
   text-align: center;
   font-size: 1em;
-  background-color: #ffa100;
+  background-color: #3f7eb6;
   background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.15));
   border-radius: 5px 5px 0 0;
   box-shadow: inset 0 1px rgba(255,255,255,.3);
@@ -351,7 +273,7 @@ a:hover, a:focus {
   border-bottom: 1px dashed rgba(0,0,0,.6);
 }
 
-.notepad input {
+.notepad textarea {
   font: inherit;
   font-size: .75em;
   color: rgba(0,0,0,.7);
@@ -363,14 +285,13 @@ a:hover, a:focus {
   border-color: rgba(0,0,0,.7);
   border-top: 0;
   resize: vertical;
-  min-height: 74px;
-  padding: 1em;
+  min-height: 150px;
+  padding: 1.5em;
+  padding-left: 3em;
   background-image: linear-gradient(0deg, transparent, transparent 24px, #f0c9ca 24px, #f0c9ca 25px, transparent 25px, transparent 27px, #f0c9ca 27px, #f0c9ca 28px, transparent 28px), linear-gradient(#fff, #fff 17px, #e3ebf3 17px, #e3ebf3 18px);
   background-size: 36px 18px, 36px 18px;
   background-repeat: repeat-y, repeat;
 }
-
-input[type='text'] { font-size: 24px; font-family: 'Tillana', cursive; }
 
 #success_message { 
   display: none;

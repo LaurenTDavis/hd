@@ -26,7 +26,7 @@ app.get('/', function(req, res){
 
 
 app.get('/contact-form', function(req, res){
-    res.render('contact', { title: 'Fundmine - Contact', page: 'contact' })
+    res.render('home', { title: 'Hamlin Davis Mailing List', page: 'home' })
 });
 
 app.post('/contact-form', function (req, res) {
@@ -34,10 +34,10 @@ app.post('/contact-form', function (req, res) {
   var transporter = nodemailer.createTransport('smtps://londond9218@gmail.com:CastleBeckett@smtp.gmail.com');
   //Mail options
   var mailOptions = {
-      from: req.body.name + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
+      from: req.body.email + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
       to: 'londond9218@gmail.com',
-      subject: 'Fundmine Contact Form',
-      text: 'Name: ' + req.body.name + '\nEmail: ' + req.body.email + '\nMessage: ' + req.body.message
+      subject: 'Hamlin Davis Mailing List',
+      text: 'Email: ' + req.body.email 
   };
   transporter.sendMail(mailOptions, function(error, info){
       if(error){
