@@ -355,6 +355,11 @@ function prepareCanvas()
     $('#canvas').mouseleave(function(e){
       paint = false;
     });
+
+
+
+
+
     $('#chooseRedSimpleTools').mousedown(function(e){
         curColor = colorRed;
         curColor_middle = colorRed;
@@ -772,6 +777,64 @@ function exportImage() {
         subText1.innerHTML = dataUrl2;
         subImage1.setAttribute("src", dataUrl2);
     }, false);
+
+
+ // Set up touch events for mobile, etc
+
+    var touch1 = document.getElementById("canvas");
+
+    touch1.addEventListener("touchstart", function (e) {
+        var canvas = document.getElementById("canvas");
+
+        mousePos = getTouchPos(canvas, e);
+        var touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousedown", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    touch1.addEventListener("touchend", function (e) {
+        var canvas = document.getElementById("canvas");
+
+        var mouseEvent = new MouseEvent("mouseup", {});
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    touch1.addEventListener("touchmove", function (e) {
+        var canvas = document.getElementById("canvas");
+        
+        var touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+
+    // Prevent scrolling when touching the canvas
+    document.body.addEventListener("touchstart", function (e) {
+        if (e.target == canvas) {
+            e.preventDefault();
+        }
+    }, false);
+    document.body.addEventListener("touchend", function (e) {
+        if (e.target == canvas) {
+            e.preventDefault();
+        }
+    }, false);
+    document.body.addEventListener("touchmove", function (e) {
+        if (e.target == canvas) {
+            e.preventDefault();
+        }
+    }, false);
+
+    function getTouchPos(canvasDom, touchEvent) {
+        var rect = canvasDom.getBoundingClientRect();
+        return {
+            x: touchEvent.touches[0].clientX - rect.left,
+            y: touchEvent.touches[0].clientY - rect.top
+        };
+    }
 
 
 
