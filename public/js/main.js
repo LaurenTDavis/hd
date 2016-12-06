@@ -802,6 +802,67 @@ function exportImage() {
     }, false);
     touch1.addEventListener("touchmove", function (e) {
         var canvas = document.getElementById("canvas");
+
+        var touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+
+
+    var touch2 = document.getElementById("canvas_middle");
+
+    touch2.addEventListener("touchstart", function (e) {
+        var canvas = document.getElementById("canvas_middle");
+
+        mousePos = getTouchPos(canvas, e);
+        var touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousedown", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    touch2.addEventListener("touchend", function (e) {
+        var canvas = document.getElementById("canvas_middle");
+
+        var mouseEvent = new MouseEvent("mouseup", {});
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    touch2.addEventListener("touchmove", function (e) {
+        var canvas = document.getElementById("canvas_middle");
+        
+        var touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+
+    var touch3 = document.getElementById("canvas_last");
+
+    touch3.addEventListener("touchstart", function (e) {
+        var canvas = document.getElementById("canvas_last");
+
+        mousePos = getTouchPos(canvas, e);
+        var touch = e.touches[0];
+        var mouseEvent = new MouseEvent("mousedown", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+        });
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    touch3.addEventListener("touchend", function (e) {
+        var canvas = document.getElementById("canvas_last");
+
+        var mouseEvent = new MouseEvent("mouseup", {});
+        canvas.dispatchEvent(mouseEvent);
+    }, false);
+    touch3.addEventListener("touchmove", function (e) {
+        var canvas = document.getElementById("canvas_last");
         
         var touch = e.touches[0];
         var mouseEvent = new MouseEvent("mousemove", {
