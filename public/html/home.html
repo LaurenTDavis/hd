@@ -9,7 +9,8 @@
     <link rel="icon" href="../images/favicon.jpg">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Hammersmith+One|Tillana|Coming+Soon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Hammersmith+One|Tillana|Coming+Soon|Reenie+Beanie|Anonymous+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://file.myfontastic.com/ifvY83JWHj7BQcoCTyoQ6o/icons.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js" type="text/javascript"></script>
@@ -40,26 +41,127 @@
                 
             </div>
             <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
                 <div class="fill">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <h2>Title #1</h2>
-                          <p>Text Content #1</p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <h2>Title #2</h2>
-                          <p>Text Content #2</p>
-                        </a>
-                      </li>
-                    </ul>
+                    <form action="/submission" method="post"  id="submission_form">
+
+                        <div class="row">
+                            <div class="col-md-4 center">
+                                <div class="sign sign-sticky"> 
+                                    <h3 class="sign-text">Tell us about what value your customers derive from your offering(s) within the limits of this sticky note.</h3>   
+                                </div>
+                                <a class="btn selection" ng-click="drawSelect1()">Draw</a>
+                                <a class="btn selection" ng-click="textSelect1()">Write</a>
+
+                                <div ng-show="text1" >
+                                    <textarea class="post-it" name="question1" ng-model="subForm.message1" data-role="none" placeholder="Type Response"></textarea>
+                                </div>
+
+
+                                <div ng-show="draw1" >
+                                    <canvas id="canvas" width="280" height="280"></canvas>
+                                </div>
+                                <div ng-show="draw1">
+                                    <a class="btn selection" id="clearCanvasSimpleTools" type="button">Clear</a>
+
+                                    <!-- <button onclick="exportImage()" targe="_blank">Export</button> -->
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 center">
+                                <div class="sign sign-sticky"> 
+                                    <h3 class="sign-text">We like team players, so tell us what we need to know about your team, but only if you can fit it on this sticky note.</h3>   
+                                </div>
+                                <div>
+                                    <a class="btn selection" ng-click="drawSelect2()">Draw</a>
+                                    <a class="btn selection" ng-click="textSelect2()">Write</a>
+                                </div>
+
+                                <div ng-show="text2" >
+                                    <textarea class="post-it" name="question2" ng-model="subForm.message2" data-role="none" placeholder="Type Response"></textarea>
+                                </div>
+
+
+                                <div ng-show="draw2">
+                                    <canvas id="canvasmiddle" width="280" height="280"></canvas>
+                                </div>
+                                <div ng-show="draw2">
+                                    <a class="btn selection" id="clearCanvasMiddle" type="button">Clear</a>
+                                </div>
+
+                            </div>
+                            <div class="col-md-4 center">
+                                <div class="sign sign-sticky">   
+                                    <h3 class="sign-text">Tell us what you need most to grow your business in the terms of capital or business services, but make it fit on the sticky note.</h3> 
+                                </div>
+                                <a class="btn selection" ng-click="drawSelect3()">Draw</a>
+                                <a class="btn selection" ng-click="textSelect3()">Write</a>
+
+                                <div ng-show="text3" >
+                                    <textarea class="post-it" name="question3" ng-model="subForm.message3" data-role="none" placeholder="Type Response"></textarea>
+                                </div>
+
+
+                                <div ng-show="draw3">
+                                    <canvas id="canvasLast" width="280" height="280"></canvas>
+                                </div>
+                                <div ng-show="draw3">
+                                    <a class="btn selection" id="clearCanvasLast" type="button">Clear</a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <input ng-hide="invisible" type="image"  id="sig-image" src="" alt="Your signature will go here!"/>
+                        <input ng-hide="invisible" type="image"  id="sig-image2" src="" alt="Your signature will go here!"/>
+                        <input ng-hide="invisible" type="image"  id="sig-image3" src="" alt="Your signature will go here!"/>
+
+                        <textarea ng-hide="invisible" name="image1" id="sig-dataUrl"></textarea>
+                        <textarea ng-hide="invisible" name="image2" id="sig-dataUrl2"></textarea>
+                        <textarea ng-hide="invisible" name="image3" id="sig-dataUrl3"></textarea>
+
+                        <div class="row">
+                            <div ng-hide="hidden">
+                                    <div class="btn selection no-vision">Hidden</div>
+                                </div>
+                            <div ng-hide="hidden" class="center">    
+                                <button class="palette no-vision" type="button"></button>
+                                
+                            </div>
+
+                            <div ng-show="showDraw" class="center">    
+                                <button class="palette red" id="chooseRedSimpleTools" type="button"></button>
+                                <button class="palette orange" id="chooseOrangeSimpleTools" type="button"></button>
+                                <button class="palette yellow" id="chooseYellowSimpleTools" type="button"></button>
+                                <button class="palette green" id="chooseGreenSimpleTools" type="button"></button>
+                                <button class="palette blue" id="chooseBlueSimpleTools" type="button"></button>
+                                <button class="palette purple" id="choosePurpleSimpleTools" type="button"></button>
+                                <button class="palette brown" id="chooseBrownSimpleTools" type="button"></button>
+                                <button class="palette black" id="chooseBlackSimpleTools" type="button"></button>
+                                <button class="palette button" id="chooseCrayonSimpleTools" type="button"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <button class="palette button" id="chooseEraserSimpleTools" type="button"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-md-offset-4 center space">
+                            <div ng-show="messageSuccess" class="alert-success success-box" role="alert" id="success_submit">Successfully Submitted!</div>
+                            <div ng-hide="notreal" class="alert-success success-box no-vision" role="alert">Successfully Submitted!</div>
+                        </div>
+                        
+                        <div class="col-md-12 center submit-btn">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button type="submit" ng-click="formSubmit()" class="btn sub-size btn-info" id="finalSubmit" >Submit</button>
+                            </div>
+                            
+
+                        </div>
+
+                    </form>
                 </div>
-                <div class="carousel-caption">
-                    <h2>Submissions</h2>
-                </div>
+
+
+
+
+
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
@@ -71,7 +173,7 @@
                         </i>
                         <div class="center sign">
                             <h1 class="sign-text ">Challenge:</h1>
-                            <h3 class="sign-text">In today's world of new technology-based ventures, startups & small businesses focused on business model innovation in blue chip & project based industries are often overlooked by lenders & investors alike.</h3>
+                            <h3 class="sign-text">In today's world of new technology-based ventures, startups &amp; small businesses focused on business model innovation in blue chip &amp; project based industries are often overlooked by lenders &amp; investors alike.</h3>
                         </div>
                     </div>
                     <div class="col-md-6">        
@@ -81,7 +183,7 @@
                         </i>
                         <div class="center sign">
                             <h1 class="sign-text">Solution:</h1>
-                            <h3 class="sign-text">Entrepreneur's focus on their customer value-proposition & let a strategic partner focus on representing that value to the lenders & investors necessary to make the venture a growing success.</h3>
+                            <h3 class="sign-text">Entrepreneur's focus on their customer value-proposition &amp; let a strategic partner focus on representing that value to the lenders &amp; investors necessary to make the venture a growing success.</h3>
                         </div>
                     </div>
                     <div class="spacing col-md-6 col-md-offset-3">
@@ -92,13 +194,10 @@
                             <h1>Sign Up for our Mailing List</h1>
 
                             <!-- Text input-->
-                         
                               <div class="input-group">
                                 <input name="email" placeholder="E-Mail Address" class="user-type" type="text">
                               </div>
                                 
-                              
-
                             <!-- Success message -->
                             <div class="alert alert-success" role="alert" id="success_message">Success! Thanks for joining!</div>
 
@@ -143,6 +242,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
     <script src="../js/main.js" type="text/javascript"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function() {
+            prepareCanvas();
+            prepareMiddle();
+            prepareLast();
+        });
+    </script>
+
         
 </body>
 </html>

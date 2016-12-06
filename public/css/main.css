@@ -226,6 +226,13 @@ a:hover, a:focus {
   text-align: center;
 }
 
+
+.sign-sticky {
+  height: 200px;
+  width: 330px;
+  margin: 0 auto;
+}
+
 /*About Page*/
 
 .clipboard:after, .clip, .clip:before, .paper {
@@ -376,6 +383,127 @@ input[type='text'] { font-size: 24px; font-family: 'Tillana', cursive; }
   display: none;
 }
 
+
+/*Sticky Note Form Field*/
+
+.post-it {
+  background-color: #ffc;
+  height: 280px;
+  width: 280px;
+  /*margin-top: 35px;*/
+  border: 0px;
+  padding: 10px;
+}
+textarea {
+  overflow: hidden;
+  resize: none;
+}
+textarea:focus, input:focus, a:focus, button:focus{
+    outline: none;
+    border: 0px;
+}
+
+canvas {
+  background:#ffc;
+  /*margin-top: 35px;*/
+  cursor: crosshair;
+
+}
+
+
+.selection {
+  font-family: 'Permanent Marker';
+  color: black;
+  background-color: #ffc;
+}
+
+.type-font {
+  font-family: "Anonymous Pro";
+}
+
+.button {
+  position: relative;
+}
+
+.button i {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.col-md-4 {
+  position: static;
+}
+
+.palette {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+}
+
+
+.red {
+  background-color: #e72a2a;
+}
+.orange {
+  background-color: #ff7b00;
+}
+.yellow {
+  background-color: #ffcf33;
+}
+.green {
+  background-color: #659b41;
+}
+.blue {
+  background-color: #1949ec;
+}
+.purple {
+  background-color: #733dba;
+}
+.brown {
+  background-color: #784212;
+}
+.black {
+  background-color: #000;
+}
+
+.submit-btn {
+  font-family: "Hammersmith One";
+  font-size: 25px;
+  padding: 0px;
+}
+
+.sub-size {
+  font-size: 18px;
+  border-radius: 2px;
+  width: 100%;
+}
+.sub-size i {
+  font-size: 100px;
+}
+
+.success-box {
+  width: 100%;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.space {
+  margin-top: 10px;
+}
+
+.no-vision {
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+
+/* Mobile Edits */
 
 
 @media (max-width: 991px) {

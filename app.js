@@ -3,8 +3,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 // Email
 var nodemailer= require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport')
-var validator = require('email-validator')
+var smtpTransport = require('nodemailer-smtp-transport');
+var validator = require('email-validator');
+var fs = require('fs');
+
 
 // Connect to DB
 var mongoose = require('mongoose');
@@ -31,13 +33,51 @@ app.get('/contact-form', function(req, res){
 
 app.post('/contact-form', function (req, res) {
   //Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
-  var transporter = nodemailer.createTransport('smtps://londond9218@gmail.com:CastleBeckett@smtp.gmail.com');
+  var transporter = nodemailer.createTransport('smtps://parkerhardison02@gmail.com:AgeoftheGeek@smtp.gmail.com');
   //Mail options
   var mailOptions = {
       from: req.body.email + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
-      to: 'londond9218@gmail.com',
+      to: 'parkerhardison02@gmail.com',
       subject: 'Hamlin Davis Mailing List',
-      text: 'Email: ' + req.body.email 
+      text: 'Email: ' + req.body.email,
+
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+          return console.log(error);
+      }
+      else {
+      console.log('Message sent: ' + info.response);
+      }
+  });
+});
+
+app.get('/submission', function(req, res){
+    res.render('home', { title: 'Hamlin Davis Mailing List', page: 'home' })
+});
+
+app.post('/submission', function (req, res) {
+  //Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
+  var transporter = nodemailer.createTransport('smtps://parkerhardison02@gmail.com:AgeoftheGeek@smtp.gmail.com');
+  //Mail options
+  var mailOptions = {
+      from: req.body.email + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
+      to: 'parkerhardison02@gmail.com',
+      subject: 'Hamlin Davis Submissions',
+      text: 'Question 1: ' + req.body.question1 + '\n Question 2: ' + req.body.question2 + '\n Question 3: ' + req.body.question3,
+      attachments: [{
+        filename: "image1.png",
+        path: req.body.image1
+      },
+      {
+        filename: "image2.png",
+        path: req.body.image2
+      },
+      {
+        filename: "image3.png",
+        path: req.body.image3
+      }]
+
   };
   transporter.sendMail(mailOptions, function(error, info){
       if(error){
