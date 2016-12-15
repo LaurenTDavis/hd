@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400);
 html,
 body {
   height: 100%;
@@ -85,88 +86,151 @@ a:hover, a:focus {
 }
 
 /*Main Page*/
+
+
+@font-face {
+    font-family: 'Crimes';
+    src: url('../images/crimes.ttf');
+}
 .home {
   background-image: url('../images/HDLogo.png');
-  height: 250px;
-  width: 255px;
+  height: 200px;
+  width: 207px;
   background-size: cover;
   margin: auto;
 }
 
-.banner {
-  position: relative;
-  z-index: 1;
-  margin: 80px auto;
-  width: 330px;
+.logo-design {
+  background: rgba(109, 27, 25, 0.23);
+  border-radius: 10px;
+
+
 }
-.banner .line {
-  margin: 0 0 10px;
-  width: 100%;
-  height: 78px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 78px;
-  transform: skew(0, -15deg);
+.graphic-board {
+    background-color: #3B3B3B;
+    margin-top: 20px;
+    border: 16px solid #8D410F;
+    height: 100%;
+
+}
+.graphic {
+  background-image: url(../images/grey.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 390px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
-.line-one {
-  font-size: 24px;
+.motto {
+  /*background: #fff;*/
+  color: #fff;
+  font-family: 'Crimes';
+  /*border: 8px solid black;*/
+  padding: 20px;
 }
 
-.line-two {
-  font-size: 14px;
+/* 510 to 991 */
+
+@media (max-width: 991px) and (min-width: 850px) {
+  .graphic {
+    margin-left: 25%;
+  }
+  
+}
+@media (max-width: 849px) and (min-width: 750px) {
+  .graphic {
+    margin-left: 21%;
+  }
+  
 }
 
-.line-three {
-  font-size: 14px;
+@media (max-width: 749px) and (min-width: 689px) {
+  .graphic {
+    margin-left: 17%;
+  }
+  
 }
 
-.banner .line:after,
-.banner .line:first-child:before {
-  position: absolute;
-  top: 44px;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 330px;
-  height: 78px;
-  border-radius: 4px;
-  background: rgba(180, 180, 180, 0.8);
-  content: '';
-  transform: skew(0, 15deg);
+@media (max-width: 689px) and (min-width: 632px) {
+  .graphic {
+    margin-left: 14%;
+  }
+  
 }
 
-.banner .line:first-child:before {
-  top: -10px;
-  right: 0;
-  left: auto;
+@media (max-width: 631px) and (min-width: 600px) {
+  .graphic {
+    margin-left: 12%;
+  }
+  
 }
 
-.banner .line:first-child:before,
-.banner .line:last-child:after {
-  width: 0;
-  height: 0;
-  border-width: 38px;
-  border-style: solid;
-  border-color: rgba(180, 180, 180, 0.8) rgba(180, 180, 180, 0.8) transparent transparent;
-  background: transparent;
+@media (max-width: 599px) and (min-width: 560px) {
+  .graphic {
+    margin-left: 8%;
+  }
+  
 }
 
-.banner .line:last-child:after {
-  top: 12px;
-  border-color: transparent transparent rgba(180, 180, 180, 0.8) rgba(180, 180, 180, 0.8);
+@media (max-width: 559px) and (min-width: 510px) {
+  .graphic {
+    margin-left: 5%;
+  }
+  
 }
 
-.banner span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #666;
-  text-shadow: 1px 1px 0 #444;
+
+.ribbon {
+ font-size: 16px !important;
+
+ width: 50%;
+    
+ position: relative;
+ background: #ba89b6;
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em; /* Adjust to suit */
+ margin: 2em auto 3em; 
 }
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #986794;
+ z-index: -1;
+}
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #804f7c transparent transparent transparent;
+ bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+
+
 
 /*White Board Design*/
 
@@ -372,7 +436,7 @@ a:hover, a:focus {
   resize: vertical;
   min-height: 74px;
   padding: 1em;
-  background-image: linear-gradient(0deg, transparent, transparent 24px, #f0c9ca 24px, #f0c9ca 25px, transparent 25px, transparent 27px, #f0c9ca 27px, #f0c9ca 28px, transparent 28px), linear-gradient(#fff, #fff 17px, #e3ebf3 17px, #e3ebf3 18px);
+  /*background-image: linear-gradient(0deg, transparent, transparent 24px, #f0c9ca 24px, #f0c9ca 25px, transparent 25px, transparent 27px, #f0c9ca 27px, #f0c9ca 28px, transparent 28px), linear-gradient(#fff, #fff 17px, #e3ebf3 17px, #e3ebf3 18px);*/
   background-size: 36px 18px, 36px 18px;
   background-repeat: repeat-y, repeat;
 }
