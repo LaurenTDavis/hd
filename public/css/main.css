@@ -94,22 +94,22 @@ a:hover, a:focus {
 }
 .home {
   background-image: url('../images/HDLogo.png');
-  height: 200px;
-  width: 207px;
+  height: 210px;
+  width: 217px;
   background-size: cover;
   margin: auto;
 }
 
 .logo-design {
-  background: rgba(109, 27, 25, 0.23);
+  background: rgba(109, 27, 25, 0.19);
   border-radius: 10px;
 
 
 }
 .graphic-board {
-    background-color: #3B3B3B;
+    background-color: #f5f5f5;
     margin-top: 20px;
-    border: 16px solid #8D410F;
+    border: 16px solid #333;
     height: 100%;
 
 }
@@ -125,7 +125,7 @@ a:hover, a:focus {
 
 .motto {
   /*background: #fff;*/
-  color: #fff;
+  color: #333;
   font-family: 'Crimes';
   /*border: 8px solid black;*/
   padding: 20px;
