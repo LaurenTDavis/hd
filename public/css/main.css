@@ -124,9 +124,10 @@ a:hover, a:focus {
 }
 
 .motto {
-  /*background: #fff;*/
-  color: #333;
-  font-family: 'Crimes';
+  background: rgba(109, 27, 25, 0.19);
+  color: #fff;
+  font-size: 40px;
+  font-family: 'Fugaz One';
   /*border: 8px solid black;*/
   padding: 20px;
 }
